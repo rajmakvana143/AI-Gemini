@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+        padding: 10px 50px;
+        font-size: 28px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+       }
+       input{
+        margin-top: 8px;
+        width: 200px;
+        height: 22px;
+        font-size: 20px;
+        padding: 3px;
+       }
+       div{
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 8px;
+        max-width: auto;
+        height: auto !important;
+        border: 2px solid black;
+        border-radius: 10px;
+        padding: 8px 13px ;
+       }
+       span{
+        font-size: 20px;
+        font-weight: 700;
+       }
+    </style>
+</head>
+<body>
+    <h1> Genrative AI </h1>
+    <form action="/genrativeAI" method="post">
+        <label for="question"> ask question !</label>
+        <br>
+        <input type="text" placeholder="your question " name="question">
+        <button>Genrate !</button>
+    </form>
+
+    
+        <% if (locals.para) { %>
+            <div>
+                <p><span> Generated Text:  </span> 
+                    <br>
+                    <% para.forEach(element => { %>
+                        <%= element %> 
+                        <br>
+                    <% }); %>
+                </p>
+            </div>
+            <% } %>
+    
+</body>
+</html>
